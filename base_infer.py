@@ -54,7 +54,7 @@ def generate(instruction,input=None,maxTokens=256):
         input_ids=input_ids, 
         max_new_tokens=maxTokens, 
         do_sample=True,
-        temperature=0.01, 
+        temperature=0.1, 
         top_p=0.9,
         repetition_penalty=1.05,
         pad_token_id=tokenizer.pad_token_id,
@@ -78,5 +78,5 @@ def generate(instruction,input=None,maxTokens=256):
     else:
         print('Warning: no <eos> detected ignoring output')
         
-for i in range(3):
+for i in range(10):
     generate("自然言語処理とは？")
